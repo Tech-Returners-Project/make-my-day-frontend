@@ -1,26 +1,66 @@
 import React from 'react';
-import logo from './logo.svg';
+import 'moment-timezone';
 import './App.css';
+import moment from 'moment-timezone';
+import Question from "./components/Question.js"
+import Header from "./components/Header.js"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component {
+  state = {
+    questions: [
+      {
+        id: 1,
+        question: "Where do you want to be?",
+        answered: false,
+        options: ['Indoor', 'Outdoor']
+      },
+      {
+        id: 2,
+        question: "Which location?",
+        answered: false,
+        options: ['Manchester', 'Liverpool']
+      },
+      {
+        id: 3,
+        question: "Who are you going with?",
+        answered: false,
+        options: ['Alone', 'As a Couple', 'With Kids', 'As a Group']
+      },
+      {
+        id: 4,
+        question: "How energetic are you feeling?",
+        answered: false,
+        options: ['Low Key', 'Quite Energteic', 'Extremely Energetic',]
+      },
+      {
+        id: 5,
+        question: "How much do you want to spend?",
+        answered: false,
+        options: ['Nothing', '£', '££', '£££',]
+      }
+    ],
+    activities: []
+  };
+
+
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <p>{moment().format("Do-MMM-YYYY")}</p>
+        {this.state.questions.map(q => {
+          return (
+            <Question question={q.question}
+              options={q.options} />
+          );
+        })
+        }
+      </div>
+    )
+  }
 }
+
+
 
 export default App;
