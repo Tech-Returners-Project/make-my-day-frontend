@@ -3,11 +3,10 @@ import '../components/Question.css'
 
 
 class Question extends React.Component {
-
-    // Need to change state of answered to true onClick
-    // handleClick = () => {
-    //     this.props.""(this.props.id)
-    // }
+     handleClick = () => {
+         console.log("clicked")
+    this.props.qAnsweredFunc(this.props.id);
+  };
 
     render() {
         return (
@@ -24,6 +23,11 @@ class Question extends React.Component {
                         );
                     })
                     }
+                    <div className="col-12 col-sm-12">
+                        <button type="submit" onClick={this.handleClick}>
+                            Next
+                        </button>
+                    </div>
                 </div>
             </div >
         )
