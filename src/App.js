@@ -43,19 +43,34 @@ class App extends React.Component {
     activities: []
   };
 
+  qAnswered = (id) => {
+    console.log(id)
+    const revisedOptions = this.state.questions.map(question => {
+      if (question.id === id) {
+        const updatedQ = { ...question, answered: true }
+        return updatedQ
+      }
+      return question
+    })
+    this.setState({
+      questions: revisedOptions
+    })
+  }
 
   render() {
+    const remainingQuestions = this.state.questions.filter(question => {
+      return question.answered === false
+    })
+
     return (
       <div className="App">
         <Header />
         <p>{moment().format("Do-MMM-YYYY")}</p>
-        {this.state.questions.map(q => {
-          return (
-            <Question question={q.question}
-              options={q.options} />
-          );
-        })
-        }
+        
+          <Question question={remainingQuestions[0].question}
+            options={remainingQuestions[0].options}
+            qAnsweredFunc={this.qAnswered} 
+            id={remainingQuestions[0].id} />
       </div>
     )
   }
