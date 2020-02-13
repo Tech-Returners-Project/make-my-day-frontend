@@ -2,8 +2,8 @@ import React from 'react';
 import 'moment-timezone';
 import './App.css';
 import moment from 'moment-timezone';
-import Question from "./components/Question.js"
-import Header from "./components/Header.js"
+import Question from "./components/Question.js";
+import Header from "./components/Header.js";
 
 
 class App extends React.Component {
@@ -12,65 +12,64 @@ class App extends React.Component {
       {
         id: 1,
         question: "Where do you want to be?",
-        answered: false,
         options: ['Indoor', 'Outdoor']
       },
       {
         id: 2,
         question: "Which location?",
-        answered: false,
         options: ['Manchester', 'Liverpool']
       },
       {
         id: 3,
         question: "Who are you going with?",
-        answered: false,
         options: ['Alone', 'As a Couple', 'With Kids', 'As a Group']
       },
       {
         id: 4,
         question: "How energetic are you feeling?",
-        answered: false,
-        options: ['Low Key', 'Quite Energteic', 'Extremely Energetic',]
+        options: ['Low Key', 'Quite Energetic', 'Extremely Energetic']
       },
       {
         id: 5,
         question: "How much do you want to spend?",
-        answered: false,
-        options: ['Nothing', '£', '££', '£££',]
+        options: ['Nothing', '£', '££', '£££']
       }
     ],
-    activities: []
   };
 
-  qAnswered = (id) => {
-    console.log(id)
-    const revisedOptions = this.state.questions.map(question => {
+  qAnswered = (id, answer) => {
+    console.log(answer)
+    const revisedQuestions = this.state.questions.map(question => {
       if (question.id === id) {
-        const updatedQ = { ...question, answered: true }
+        const updatedQ = { ...question, answer }
         return updatedQ
       }
       return question
     })
     this.setState({
-      questions: revisedOptions
+      questions: revisedQuestions
     })
   }
 
   render() {
     const remainingQuestions = this.state.questions.filter(question => {
-      return question.answered === false
+      return question.answer === undefined
     })
 
     return (
-      <div className="App">
+      <div className="App" >
         <Header />
         <p>{moment().format("Do-MMM-YYYY")}</p>
-        
-          <Question question={remainingQuestions[0].question}
+
+        {remainingQuestions.length === 0
+          ? <div>{this.state.questions.map(q => q.answer).join(', ')}</div>
+          :
+          <Question
+            question={remainingQuestions[0].question}
             options={remainingQuestions[0].options}
-            qAnsweredFunc={this.qAnswered} 
+            qAnsweredFunc={this.qAnswered}
             id={remainingQuestions[0].id} />
+        }
       </div>
     )
   }

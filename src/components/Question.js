@@ -3,10 +3,9 @@ import '../components/Question.css'
 
 
 class Question extends React.Component {
-     handleClick = () => {
-         console.log("clicked")
-    this.props.qAnsweredFunc(this.props.id);
-  };
+    handleClick = (answer) => {
+        this.props.qAnsweredFunc(this.props.id, answer);
+    };
 
     render() {
         return (
@@ -15,17 +14,18 @@ class Question extends React.Component {
                     <p className="question">{this.props.question}</p>
                 </div>
                 <div className="col-12 col-sm-6">
-                    {this.props.options.map(q => {
+                    {this.props.options.map(answer => {
                         return (
-                            <button type="select" options={q.options}>
-                                {q}
+                            <button type="button" onClick={() => { this.handleClick(answer) }}>
+                                {answer}
                             </button>
                         );
                     })
                     }
                     <div className="col-12 col-sm-12">
-                        <button type="submit" onClick={this.handleClick}>
-                            Next
+                        <button
+                            type="button">
+                            Back
                         </button>
                     </div>
                 </div>
