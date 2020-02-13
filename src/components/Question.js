@@ -10,26 +10,30 @@ class Question extends React.Component {
     render() {
         return (
             <div className="row">
-                <div className="col-12 col-sm-6">
+                <div className="col-12">
                     <p className="question">{this.props.question}</p>
                 </div>
-                <div className="col-12 col-sm-6">
+                <div className="col-12">
                     {this.props.options.map(answer => {
                         return (
-                            <button type="button" onClick={() => { this.handleClick(answer) }}>
-                                {answer}
-                            </button>
+                            <div className="row">
+                                <div className="col-12">
+                                <button className="optionButton" onClick={() => {this.handleClick(answer) }}>
+                                        {answer}
+                                    </button>
+                                </div>
+                            </div >
                         );
                     })
                     }
-                    <div className="col-12 col-sm-12">
+                    <div className="col-12">
                         <button
-                            type="button">
+                            className="nextButton">
                             Back
-                        </button>
+                      </button>
                     </div>
                 </div>
-            </div >
+            </div>
         )
     }
 }
