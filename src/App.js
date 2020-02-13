@@ -12,40 +12,34 @@ class App extends React.Component {
       {
         id: 1,
         question: "Where do you want to be?",
-        answered: false,
         options: ['Indoor', 'Outdoor']
       },
       {
         id: 2,
         question: "Which location?",
-        answered: false,
         options: ['Manchester', 'Liverpool']
       },
       {
         id: 3,
         question: "Who are you going with?",
-        answered: false,
         options: ['Alone', 'As a Couple', 'With Kids', 'As a Group']
       },
       {
         id: 4,
         question: "How energetic are you feeling?",
-        answered: false,
         options: ['Low Key', 'Quite Energetic', 'Extremely Energetic']
       },
       {
         id: 5,
         question: "How much do you want to spend?",
-        answered: false,
         options: ['Nothing', '£', '££', '£££']
       }
     ],
-    activities: []
   };
 
   qAnswered = (id, answer) => {
     console.log(answer)
-    const revisedOptions = this.state.questions.map(question => {
+    const revisedQuestions = this.state.questions.map(question => {
       if (question.id === id) {
         const updatedQ = { ...question, answer }
         return updatedQ
@@ -53,24 +47,29 @@ class App extends React.Component {
       return question
     })
     this.setState({
-      questions: revisedOptions
+      questions: revisedQuestions
     })
   }
 
   render() {
-    const remainingQuestions = this.state.questions.filter(question => !question.answer)
-  
-  return(
-      <div className = "App" >
-      <Header />
-      <p>{moment().format("Do-MMM-YYYY")}</p>
+    const remainingQuestions = this.state.questions.filter(question => {
+      return question.answer === undefined
+    })
 
-      <Question
-        question={remainingQuestions[0].question}
-        options={remainingQuestions[0].options}
-        qAnsweredFunc={this.qAnswered}
-        id={remainingQuestions[0].id}
-      />
+    return (
+      <div className="App" >
+        <Header />
+        <p>{moment().format("Do-MMM-YYYY")}</p>
+
+        {remainingQuestions.length === 0
+          ? <div>{this.state.questions.map(q => q.answer).join(', ')}</div>
+          :
+          <Question
+            question={remainingQuestions[0].question}
+            options={remainingQuestions[0].options}
+            qAnsweredFunc={this.qAnswered}
+            id={remainingQuestions[0].id} />
+        }
       </div>
     )
   }

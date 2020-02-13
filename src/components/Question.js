@@ -23,7 +23,8 @@ class Question extends React.Component {
                     })
                     }
                     <div className="col-12 col-sm-12">
-                        <button type="submit" onClick={this.handleClick}>
+                        <button
+                            type="button">
                             Back
                         </button>
                     </div>
