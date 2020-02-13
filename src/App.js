@@ -58,22 +58,29 @@ class App extends React.Component {
 
     return (
       <div className="App" >
-        <Header />
-        <p>{moment().format("Do-MMM-YYYY")}</p>
+        <div className="container">
+          <Header />
+          <p>Today is: {moment().format("Do-MMM-YYYY")}</p>
 
-        {remainingQuestions.length === 0
-          ? <div>{this.state.questions.map(q => q.answer).join(', ')}</div>
-          :
-          <Question
-            question={remainingQuestions[0].question}
-            options={remainingQuestions[0].options}
-            qAnsweredFunc={this.qAnswered}
-            id={remainingQuestions[0].id} />
-        }
+          {remainingQuestions.length === 0
+            ? <div>{this.state.questions.map(q => q.answer).join(', ')}</div>
+            :
+            <div className="row">
+              <div className="col-12">
+                <Question
+                  question={remainingQuestions[0].question}
+                  options={remainingQuestions[0].options}
+                  qAnsweredFunc={this.qAnswered}
+                  id={remainingQuestions[0].id} />
+              </div>
+            </div>
+          }
+        </div>
       </div>
     )
   }
 }
+
 
 
 

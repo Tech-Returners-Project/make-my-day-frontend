@@ -1,0 +1,29 @@
+.optionButton {
+    padding: 150;
+    background-color: teal;
+    border-radius: 4px;
+    margin: 15px;
+    color: white;
+    text-align: center;
+  }
+
+  .nextButton {
+    padding: 150;
+    background-color: red ;
+    border-radius: 4px;
+    margin: 50px;
+    color: white;
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 1000px){
+    .optionButton {
+        font-size: 150%;
+ }
+}
+
+@media only screen and (max-width: 1000px){
+    .nextButton {
+        font-size: 150%;
+ }
+}
