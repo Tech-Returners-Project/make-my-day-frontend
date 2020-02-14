@@ -4,6 +4,7 @@ import './App.css';
 import moment from 'moment-timezone';
 import Question from "./components/Question.js";
 import Header from "./components/Header.js";
+import Result from "./components/Result.js"
 
 
 class App extends React.Component {
@@ -63,7 +64,7 @@ class App extends React.Component {
           <p>Today is: {moment().format("Do-MMM-YYYY")}</p>
 
           {remainingQuestions.length === 0
-            ? <div>{this.state.questions.map(q => q.answer).join(', ')}</div>
+            ? <Result />
             :
             <div className="row">
               <div className="col-12">
