@@ -13,27 +13,96 @@ class App extends React.Component {
       {
         id: 1,
         question: "Where do you want to be?",
-        options: ['Indoor', 'Outdoor']
+        options: [
+          {
+            text: 'Indoor',
+            image: 'indoor.png'
+          },
+          {
+            text: 'Outdoor',
+            image: 'outdoor.png'
+          }
+        ]
       },
+
       {
         id: 2,
         question: "Which location?",
-        options: ['Manchester', 'Liverpool']
+        options: [
+          {
+            text: 'Manchester',
+            image: 'manchester.png'
+          },
+          {
+            text: 'Liverpool',
+            image: 'liverpool.png'
+          }
+        ]
       },
+
       {
         id: 3,
         question: "Who are you going with?",
-        options: ['Alone', 'As a Couple', 'With Kids', 'As a Group']
+        options: [
+          {
+            text: 'Alone',
+            image: 'alone.png'
+          },
+          {
+            text: 'As a Couple',
+            image: 'couple.png'
+          },
+          {
+            text: 'With Kids',
+            image: 'kids.png'
+          },
+          {
+            text: 'As a Group',
+            image: 'group.png'
+          }
+        ]
       },
+
       {
         id: 4,
         question: "How energetic are you feeling?",
-        options: ['Low Key', 'Quite Energetic', 'Extremely Energetic']
+        options: [
+          {
+            text: 'Low Key',
+            image: 'low_key.png'
+          },
+          {
+            text: 'Quite Energetic',
+            image: 'quite_energetic.png'
+          },
+          {
+            text: 'Extremely Energetic',
+            image: 'extremely_energetic.png'
+          }
+        ]
       },
+
       {
         id: 5,
         question: "How much do you want to spend?",
-        options: ['Nothing', '£', '££', '£££']
+        options: [
+          {
+            text: 'Nothing',
+            image: 'nothing.png'
+          },
+          {
+            text: '£',
+            image: 'one_pound.png'
+          },
+          {
+            text: '££',
+            image: 'two_pound.png'
+          },
+          {
+            text: '£££',
+            image: 'three_pound.png'
+          }
+        ]
       }
     ],
   };
