@@ -4,8 +4,17 @@ import '../components/Header.css'
 class Header extends React.Component {
     render() {
         return (
-            <div>
-                <h1 className="title"> Make my Day!</h1>
+            <div className="container">
+
+                <div className="row" >
+                    <div className="col-12">
+                        <img className="logo"
+                            src="MakeMyDayLogoCrop.png"
+                            alt="Make My Day"
+                        />
+                    </div>
+                </div>
+
             </div>
         )
     }
