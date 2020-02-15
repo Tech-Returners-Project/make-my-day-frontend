@@ -130,7 +130,7 @@ class App extends React.Component {
       <div className="App" >
         <div className="container">
           <Header />
-          <p>Today is: {moment().format("Do-MMM-YYYY")}</p>
+          <p>Today is the {moment().format("Do-MMM-YYYY")}</p>
 
           {remainingQuestions.length === 0
             ? <Result />
