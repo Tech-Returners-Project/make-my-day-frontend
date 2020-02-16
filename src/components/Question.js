@@ -18,7 +18,7 @@ class Question extends React.Component {
                 <div className="col-12">
                     {this.props.options.map(option => {
                         return (
-                            <div  key={option.text} className="row questionRow">
+                            <div key={option.text} className="row questionRow">
 
                                 <div className="col-6">
                                     <button className="optionButton"
@@ -29,21 +29,30 @@ class Question extends React.Component {
 
                                 <div className="col-3">
                                     <img className="optionImage"
-                                        src={'/images/' + option.image}                                       
-                                        alt = ""
+                                        src={'/images/' + option.image}
+                                        alt=""
                                     />
                                 </div>
 
                             </div >
                         );
                     })
-
                     }
-                    <div className="col-12">
-                        <button
-                            className="backButton">
-                            Back
-                      </button>
+
+                    <div className="row">
+                        <div className="col-6 backButton">
+                            <button
+                                className="backRefreshButton">
+                                Back
+                        </button>
+                        </div>
+
+                        <div className="col-6 refreshButton">
+                            <button
+                                className="backRefreshButton">
+                                Restart
+                        </button>
+                        </div>
                     </div>
                 </div>
             </div>
