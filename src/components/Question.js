@@ -28,14 +28,14 @@ class Question extends React.Component {
             return (
               <div key={option.text} className="row questionRow">
 
-                <div className="col-6">
+                <div className="col-6 text-right">
                   <button className="optionButton"
                     onClick={() => { this.handleClick(option.text) }}>
                     {option.text}
                   </button>
                 </div>
 
-                <div className="col-3">
+                <div className="col-6 text-left">
                   <img className="optionImage"
                     src={'/images/' + option.image}
                     alt=""

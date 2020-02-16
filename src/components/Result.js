@@ -6,22 +6,25 @@ import axios from "axios"
 
 class Result extends React.Component {
 
-  state =  {
+  state = {
     Activities: []
-};
+  };
+  handleRefresh = () => {
+    this.props.refreshButtonFunc();
+  }
 
-componentDidMount(){
-  axios.get("https://j18snr1khd.execute-api.eu-west-1.amazonaws.com/dev/activities").then((response) => {
-    const activities = response.data.activities;
-    this.setState({
-      Activities: activities
+  componentDidMount() {
+    axios.get("https://j18snr1khd.execute-api.eu-west-1.amazonaws.com/dev/activities").then((response) => {
+      const activities = response.data.activities;
+      this.setState({
+        Activities: activities
+      })
     })
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+      .catch((err) => {
+        console.log(err);
+      });
 
-}
+  }
   render() {
     return (
       <div>
@@ -29,15 +32,19 @@ componentDidMount(){
         <h1>CINEMA</h1><br></br>
         <div className="row">
           <div className="col-6 sm-6">
-            <img src={Cinema} alt="Cinema" className="photo" />
+            <img src={Cinema} alt="Cinema" className="photo img-fluid" />
           </div>
           <div className="col-6 sm-6">
-          <p>Relax and unwind while watching a film, make sure to buy plenty of snacks!</p>
-          <h3>Your local cinemas are:</h3>
-          <a href="https://www.myvue.com/cinema/manchester-printworks/whats-on">VUE Cinema Printworks</a><br></br>
-          <a href="https://www.odeon.co.uk/cinemas/manchester_great_northern/225/">ODEON Cinema Manchester</a><br></br>
-          <a href="https://homemcr.org/cinema/">HOME Cinema Manchester</a><br></br>
+            <p>Relax and unwind while watching a film, make sure to buy plenty of snacks!</p>
+            <h3>Your local cinemas are:</h3>
+            <a href="https://www.myvue.com/cinema/manchester-printworks/whats-on">VUE Cinema Printworks</a><br></br>
+            <a href="https://www.odeon.co.uk/cinemas/manchester_great_northern/225/">ODEON Cinema Manchester</a><br></br>
+            <a href="https://homemcr.org/cinema/">HOME Cinema Manchester</a><br></br>
           </div>
+          <button className="backRefreshButton"
+            onClick={() => { this.handleRefresh() }}>
+            Click to restart all questions
+              </button>
         </div>
       </div>
     );

@@ -18,6 +18,15 @@ body {
   border-radius: 50%;
 }
 
+/* .date {
+  font-size: 25px;
+} */
+
+@media only screen and (min-width: 1000px) {
+  .date {
+    font-size: 160%;
+  }
+}
 
 .questionRow {
   padding-bottom: 1%;

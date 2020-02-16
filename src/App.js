@@ -108,11 +108,9 @@ class App extends React.Component {
   };
 
   qAnswered = (id, answer) => {
-    console.log(answer)
     const revisedQuestions = this.state.questions.map(question => {
       if (question.id === id) {
         const updatedQ = { ...question, answer }
-        console.log(updatedQ)
         return updatedQ
       }
       return question
@@ -155,11 +153,12 @@ class App extends React.Component {
       <div className="App" >
         <div className="container">
           <Header />
-          <p>Today is the {moment().format("Do-MMM-YYYY")}</p>
+          <p className="date">Today is the {moment().format("Do-MMM-YYYY")}</p>
 
           {remainingQuestions.length === 0
-            ? <Result />
-            :
+            ? <Result 
+            refreshButtonFunc={this.refreshButton}
+            />:
             <div className="row">
               <div className="col-12">
                 <Question

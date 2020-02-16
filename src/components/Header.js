@@ -4,17 +4,13 @@ import '../components/Header.css'
 class Header extends React.Component {
     render() {
         return (
-            <div className="container">
-
-                <div className="row" >
-                    <div className="col-12">
-                        <img className="logo"
-                            src="MakeMyDayLogoCrop.png"
-                            alt="Make My Day"
-                        />
-                    </div>
+            <div className="row" >
+                <div className="col-12">
+                    <img className="logo img-fluid"
+                        src="MakeMyDayLogoCrop.png"
+                        alt="Make My Day"
+                    />
                 </div>
-
             </div>
         )
     }
