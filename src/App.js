@@ -112,6 +112,7 @@ class App extends React.Component {
     const revisedQuestions = this.state.questions.map(question => {
       if (question.id === id) {
         const updatedQ = { ...question, answer }
+        console.log(updatedQ)
         return updatedQ
       }
       return question
@@ -121,9 +122,33 @@ class App extends React.Component {
     })
   }
 
+  backButton = (id) => {
+    const newRevisedQuestions = this.state.questions.map(question => {
+      if (question.id === id - 1) {
+        return { ...question, answer: null }
+      }
+      return question
+    })
+    this.setState({
+      questions: newRevisedQuestions
+    })
+  }
+
+  refreshButton = () => {
+    const nullAnswers = this.state.questions.map(question => {
+      return { ...question, answer: null }
+    })
+    this.setState({
+      questions: nullAnswers
+    })
+  }
+
+
+
+
   render() {
     const remainingQuestions = this.state.questions.filter(question => {
-      return question.answer === undefined
+      return !question.answer
     })
 
     return (
@@ -141,12 +166,14 @@ class App extends React.Component {
                   question={remainingQuestions[0].question}
                   options={remainingQuestions[0].options}
                   qAnsweredFunc={this.qAnswered}
+                  backButtonFunc={this.backButton}
+                  refreshButtonFunc={this.refreshButton}
                   id={remainingQuestions[0].id} />
               </div>
             </div>
           }
         </div>
-      </div>
+      </div >
     )
   }
 }

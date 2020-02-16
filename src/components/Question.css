@@ -22,7 +22,7 @@
   margin-left: 60%; */
 }
 
-.backButton {
+.backRefreshButton {
   padding: 150;
   background-color: teal;
   border-radius: 4px;
@@ -31,6 +31,17 @@
   text-align: center;
 }
 
+.backButton {
+  text-align: right;
+  /* padding-top: 2%; */
+}
+
+.refreshButton {
+  text-align: left;
+  /* padding-top: 2%; */
+}
+
+
 @media only screen and (max-width: 1000px) {
   .optionButton {
     font-size: 150%;
@@ -38,7 +49,7 @@
 }
 
 @media only screen and (max-width: 1000px) {
-  .backButton {
+  .backRefreshButton {
     font-size: 150%;
   }
 }
