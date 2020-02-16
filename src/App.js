@@ -112,6 +112,7 @@ class App extends React.Component {
     const revisedQuestions = this.state.questions.map(question => {
       if (question.id === id) {
         const updatedQ = { ...question, answer }
+        console.log(updatedQ)
         return updatedQ
       }
       return question
@@ -121,32 +122,45 @@ class App extends React.Component {
     })
   }
 
-  render() {
-    const remainingQuestions = this.state.questions.filter(question => {
-      return question.answer === undefined
+  backButton = (id) => {
+    const newRevisedQuestions = this.state.questions.map(question => {
+      if (question.id === id -1 ) {
+        return { ...question, answer:null }
+      }
+      return question
     })
+    this.setState({
+      questions:newRevisedQuestions
+    })
+  }
 
-    return (
-      <div className="App" >
-        <div className="container">
-          <Header />
-          <p>Today is the {moment().format("Do-MMM-YYYY")}</p>
+  render() {
+      const remainingQuestions = this.state.questions.filter(question => {
+        return !question.answer 
+      })
 
-          {remainingQuestions.length === 0
-            ? <Result />
-            :
-            <div className="row">
-              <div className="col-12">
-                <Question
-                  question={remainingQuestions[0].question}
-                  options={remainingQuestions[0].options}
-                  qAnsweredFunc={this.qAnswered}
-                  id={remainingQuestions[0].id} />
+    return(
+      <div className = "App" >
+          <div className="container">
+            <Header />
+            <p>Today is the {moment().format("Do-MMM-YYYY")}</p>
+
+            {remainingQuestions.length === 0
+              ? <Result />
+              :
+              <div className="row">
+                <div className="col-12">
+                  <Question
+                    question={remainingQuestions[0].question}
+                    options={remainingQuestions[0].options}
+                    qAnsweredFunc={this.qAnswered}
+                    backButtonFunc = {this.backButton}
+                    id={remainingQuestions[0].id} />
+                </div>
               </div>
-            </div>
-          }
-        </div>
-      </div>
+            }
+          </div>
+      </div >
     )
   }
 }

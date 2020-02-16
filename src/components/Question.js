@@ -7,6 +7,10 @@ class Question extends React.Component {
         this.props.qAnsweredFunc(this.props.id, answer);
     };
 
+    handleBack = () => {
+        this.props.backButtonFunc(this.props.id);
+    }
+
     render() {
         return (
             <div className="row">
@@ -35,14 +39,13 @@ class Question extends React.Component {
                                 </div>
 
                             </div >
-                        );
-                    })
-                    }
+                        )
+                    })}
 
                     <div className="row">
                         <div className="col-6 backButton">
-                            <button
-                                className="backRefreshButton">
+                            <button className="backRefreshButton"
+                                onClick={() => {this.handleBack()}}>
                                 Back
                         </button>
                         </div>
