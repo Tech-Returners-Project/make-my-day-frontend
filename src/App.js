@@ -124,42 +124,55 @@ class App extends React.Component {
 
   backButton = (id) => {
     const newRevisedQuestions = this.state.questions.map(question => {
-      if (question.id === id -1 ) {
-        return { ...question, answer:null }
+      if (question.id === id - 1) {
+        return { ...question, answer: null }
       }
       return question
     })
     this.setState({
-      questions:newRevisedQuestions
+      questions: newRevisedQuestions
     })
   }
 
+  refreshButton = () => {
+    const nullAnswers = this.state.questions.map(question => {
+      return { ...question, answer: null }
+    })
+    this.setState({
+      questions: nullAnswers
+    })
+  }
+
+
+
+
   render() {
-      const remainingQuestions = this.state.questions.filter(question => {
-        return !question.answer 
-      })
+    const remainingQuestions = this.state.questions.filter(question => {
+      return !question.answer
+    })
 
-    return(
-      <div className = "App" >
-          <div className="container">
-            <Header />
-            <p>Today is the {moment().format("Do-MMM-YYYY")}</p>
+    return (
+      <div className="App" >
+        <div className="container">
+          <Header />
+          <p>Today is the {moment().format("Do-MMM-YYYY")}</p>
 
-            {remainingQuestions.length === 0
-              ? <Result />
-              :
-              <div className="row">
-                <div className="col-12">
-                  <Question
-                    question={remainingQuestions[0].question}
-                    options={remainingQuestions[0].options}
-                    qAnsweredFunc={this.qAnswered}
-                    backButtonFunc = {this.backButton}
-                    id={remainingQuestions[0].id} />
-                </div>
+          {remainingQuestions.length === 0
+            ? <Result />
+            :
+            <div className="row">
+              <div className="col-12">
+                <Question
+                  question={remainingQuestions[0].question}
+                  options={remainingQuestions[0].options}
+                  qAnsweredFunc={this.qAnswered}
+                  backButtonFunc={this.backButton}
+                  refreshButtonFunc={this.refreshButton}
+                  id={remainingQuestions[0].id} />
               </div>
-            }
-          </div>
+            </div>
+          }
+        </div>
       </div >
     )
   }
