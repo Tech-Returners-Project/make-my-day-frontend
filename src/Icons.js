@@ -12,13 +12,13 @@ class Icons extends React.Component {
             <div className="container">
                 <div className="row">
                     <div className="col-4">
-                        <FontAwesomeIcon icon={faStar} />
+                        <FontAwesomeIcon icon={faStar} size="3x"/>
                     </div>
                     <div className="col-4">
-                    <FontAwesomeIcon icon={faCalendarAlt} />
+                    <FontAwesomeIcon icon={faCalendarAlt} size="3x"/>
                     </div>
                     <div className="col-4">
-                    <FontAwesomeIcon icon={faCogs} />
+                    <FontAwesomeIcon icon={faCogs} size="3x"/>
                     </div>
                 </div>
             </div>
