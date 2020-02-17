@@ -9,9 +9,14 @@
   margin: 15px;
   color: white;
   text-align: center;
-  margin-left: 60%;
   font-family: Handlee;
   padding: 2%;
+  font-size: 30px;
+  width: 85%;
+}
+
+.optionButton:hover {
+  background-color: rgb(77, 129, 129);
 }
 
 .optionImage {
@@ -26,9 +31,11 @@
   padding: 150;
   background-color: teal;
   border-radius: 4px;
-  margin: 50px;
+  margin: 40px 0 0 0;
   color: white;
   text-align: center;
+  font-size: 20px;
+  width: 60%;
 }
 
 .backButton {
@@ -40,7 +47,9 @@
   text-align: left;
   /* padding-top: 2%; */
 }
-
+.backRefreshButton:hover {
+  background-color: rgb(1, 61, 61);
+}
 
 @media only screen and (max-width: 1000px) {
   .optionButton {
