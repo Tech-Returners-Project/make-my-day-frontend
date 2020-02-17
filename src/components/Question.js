@@ -1,5 +1,8 @@
 import React from "react";
-import '../components/Question.css'
+import '../components/Question.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
+import { faSync } from '@fortawesome/free-solid-svg-icons';
 
 
 class Question extends React.Component {
@@ -48,17 +51,13 @@ class Question extends React.Component {
 
           <div className="row">
             <div className="col-6 backButton">
-              <button className="backRefreshButton"
-                onClick={() => { this.handleBack() }}>
-                Back
-              </button>
+              <FontAwesomeIcon icon={faArrowAltCircleLeft} style={{ paddingTop: 10 }} size='3x'
+                onClick={() => { this.handleBack() }} />
             </div>
 
             <div className="col-6 refreshButton">
-              <button className="backRefreshButton"
-                onClick={() => { this.handleRefresh() }}>
-                Restart
-              </button>
+              <FontAwesomeIcon icon={faSync} style={{ paddingTop: 10 }} size='3x'
+                onClick={() => { this.handleRefresh() }} />
             </div>
           </div>
         </div>
