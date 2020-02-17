@@ -4,10 +4,10 @@
 
 .optionButton {
   /* background-color: teal; */
-  background-color: darkslategray;
+  background-color: white;
   border-radius: 4px;
   margin: 15px;
-  color: white;
+  color: teal;
   text-align: center;
   font-family: Handlee;
   padding: 2%;
@@ -17,6 +17,7 @@
 
 .optionButton:hover {
   background-color: rgb(77, 129, 129);
+  color: black
 }
 
 .optionImage {
