@@ -12,6 +12,7 @@
   font-family: Handlee;
   padding: 2%;
   font-size: 30px;
+  width: 85%;
 }
 
 .optionButton:hover {
@@ -33,6 +34,8 @@
   margin: 40px 0 0 0;
   color: white;
   text-align: center;
+  font-size: 20px;
+  width: 60%;
 }
 
 .backButton {

@@ -60,9 +60,7 @@ class Question extends React.Component {
                 Restart
               </button>
             </div>
-
           </div>
-
         </div>
       </div>
     )
