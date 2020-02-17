@@ -5,6 +5,7 @@ import moment from 'moment-timezone';
 import Question from "./components/Question.js";
 import Header from "./components/Header.js";
 import Result from "./components/Result.js"
+import Icons from './Icons';
 
 
 class App extends React.Component {
@@ -171,6 +172,11 @@ class App extends React.Component {
               </div>
             </div>
           }
+          <div className="row">
+          <div className="col-12" style={{paddingTop: 50}}>
+          <Icons />
+          </div>
+          </div>
         </div>
       </div >
     )
