@@ -14,7 +14,7 @@ class Result extends React.Component {
   }
 
   componentDidMount() {
-    axios.get("https://j18snr1khd.execute-api.eu-west-1.amazonaws.com/dev/activities").then((response) => {
+    axios.get(`https://j18snr1khd.execute-api.eu-west-1.amazonaws.com/dev/activities/?%Location={this.props.questions[1].answer}&Place={this.props.questions[0].answer}&People={this.props.questions[2].answer&Price={this.props.questions[4].answer&Activity_Level={this.props.questions[3].answer`).then((response) => {
       const activities = response.data.activities;
       this.setState({
         Activities: activities
