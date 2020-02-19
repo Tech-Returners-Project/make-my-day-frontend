@@ -159,6 +159,7 @@ class App extends React.Component {
           {remainingQuestions.length === 0
             ? <Result 
             refreshButtonFunc={this.refreshButton}
+            questions={this.state.questions}
             />:
             <div className="row">
               <div className="col-12">

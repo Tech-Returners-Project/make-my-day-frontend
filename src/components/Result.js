@@ -32,7 +32,7 @@ class Result extends React.Component {
         <h1>CINEMA</h1><br></br>
         <div className="row">
           <div className="col-6 sm-6">
-            <img src={Cinema} alt="Cinema" className="photo img-fluid" />
+            <img src="https://www.theelectric.co.uk/images/carousel/landing1.jpg" alt="Cinema" className="photo img-fluid" />
           </div>
           <div className="col-6 sm-6">
             <p>Relax and unwind while watching a film, make sure to buy plenty of snacks!</p>
