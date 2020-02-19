@@ -48,6 +48,14 @@
   /* padding-top: 2%; */
 }
 
+.fa-arrow-alt-circle-left:hover {
+  color: orange
+}
+
+.fa-sync:hover {
+  color: orange
+}
+
 @media only screen and (max-width: 1000px) {
   .optionButton {
     font-size: 150%;

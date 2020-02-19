@@ -29,22 +29,26 @@ class Result extends React.Component {
     return (
       <div>
         <h1>Your Activity Is...</h1><br></br>
-        <h1>CINEMA</h1><br></br>
+        <h1>{this.state.Activities.activity}</h1><br></br>
         <div className="row">
-          <div className="col-6 sm-6">
-            <img src={Cinema} alt="Cinema" className="photo img-fluid" />
+          <div className="col-12 sm-6">
+            <img src={this.state.Activities.image} Alt={this.state.Activities.activity} className="photo img-fluid" />
           </div>
-          <div className="col-6 sm-6">
-            <p>Relax and unwind while watching a film, make sure to buy plenty of snacks!</p>
-            <h3>Your local cinemas are:</h3>
-            <a href="https://www.myvue.com/cinema/manchester-printworks/whats-on">VUE Cinema Printworks</a><br></br>
-            <a href="https://www.odeon.co.uk/cinemas/manchester_great_northern/225/">ODEON Cinema Manchester</a><br></br>
-            <a href="https://homemcr.org/cinema/">HOME Cinema Manchester</a><br></br>
+          <div className="col-12 sm-6">
+            <p>{this.state.Activities.Description}</p>
+            <h3>Here are some links for your activity:</h3>
+            <p>
+              <a href={this.state.Activities.Link_1}>{this.state.Activities.Link_1}</a><br></br>
+              <a href={this.state.Activities.Link_2}>{this.state.Activities.Link_2}</a><br></br>
+              <a href={this.state.Activities.Link_3}>{this.state.Activities.Link_3}</a><br></br>
+            </p>
           </div>
-          <button className="backRefreshButton"
-            onClick={() => { this.handleRefresh() }}>
-            Click to restart all questions
+          <div className="col-12 sm-12">
+            <button className="backRefreshButton"
+              onClick={() => { this.handleRefresh() }}>
+              Click to restart all questions
               </button>
+          </div>
         </div>
       </div>
     );
@@ -52,3 +56,4 @@ class Result extends React.Component {
 }
 
 export default Result;
+
