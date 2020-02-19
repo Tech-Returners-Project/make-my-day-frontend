@@ -12,12 +12,11 @@
   font-family: Handlee;
   padding: 2%;
   font-size: 30px;
-  width: 85%;
 }
 
 .optionButton:hover {
   background-color: rgb(77, 129, 129);
-  color: black
+  color: white;
 }
 
 .optionImage {
@@ -47,9 +46,6 @@
 .refreshButton {
   text-align: left;
   /* padding-top: 2%; */
-}
-.backRefreshButton:hover {
-  background-color: rgb(1, 61, 61);
 }
 
 @media only screen and (max-width: 1000px) {
