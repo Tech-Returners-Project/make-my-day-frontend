@@ -49,17 +49,19 @@ class Question extends React.Component {
             )
           })}
 
-          <div className="row">
-            <div className="col-6 backButton">
-              <FontAwesomeIcon icon={faArrowAltCircleLeft} style={{ paddingTop: 10 }} size='3x'
-                onClick={() => { this.handleBack() }} />
-            </div>
+          {this.props.id > 1 &&
+            <div className="row"> 
+              <div className="col-6 backButton">
+                <FontAwesomeIcon icon={faArrowAltCircleLeft} style={{ paddingTop: 10 }} size='3x'
+                  onClick={() => { this.handleBack() }} />
+              </div>
 
-            <div className="col-6 refreshButton">
-              <FontAwesomeIcon icon={faSync} style={{ paddingTop: 10 }} size='3x'
-                onClick={() => { this.handleRefresh() }} />
+              <div className="col-6 refreshButton">
+                <FontAwesomeIcon icon={faSync} style={{ paddingTop: 10 }} size='3x'
+                  onClick={() => { this.handleRefresh() }} />
+              </div>
             </div>
-          </div>
+          }
         </div>
       </div>
     )
