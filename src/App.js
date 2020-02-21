@@ -142,9 +142,6 @@ class App extends React.Component {
     })
   }
 
-
-
-
   render() {
     const remainingQuestions = this.state.questions.filter(question => {
       return !question.answer
