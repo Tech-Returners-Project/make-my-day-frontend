@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/make-my-day-frontend/precache-manifest.8ed5b286d76ef2338e13f4c73d2fbd7f.js"
+  "/make-my-day-frontend/precache-manifest.a9a5ce2b03be112b97e7ae6b552776fb.js"
 );
 
 self.addEventListener('message', (event) => {
