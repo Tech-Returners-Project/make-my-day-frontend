@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/make-my-day-frontend/static/css/main.909eaae4.chunk.css",
-    "main.js": "/make-my-day-frontend/static/js/main.24e17b58.chunk.js",
-    "main.js.map": "/make-my-day-frontend/static/js/main.24e17b58.chunk.js.map",
+    "main.js": "/make-my-day-frontend/static/js/main.1c6f4779.chunk.js",
+    "main.js.map": "/make-my-day-frontend/static/js/main.1c6f4779.chunk.js.map",
     "runtime-main.js": "/make-my-day-frontend/static/js/runtime-main.07de80d5.js",
     "runtime-main.js.map": "/make-my-day-frontend/static/js/runtime-main.07de80d5.js.map",
     "static/js/2.fd125da7.chunk.js": "/make-my-day-frontend/static/js/2.fd125da7.chunk.js",
     "static/js/2.fd125da7.chunk.js.map": "/make-my-day-frontend/static/js/2.fd125da7.chunk.js.map",
     "index.html": "/make-my-day-frontend/index.html",
-    "precache-manifest.1afb8181ddc08e88c0060ead80f425b8.js": "/make-my-day-frontend/precache-manifest.1afb8181ddc08e88c0060ead80f425b8.js",
+    "precache-manifest.0a8f9474f4af2db6ba111d12e202db0f.js": "/make-my-day-frontend/precache-manifest.0a8f9474f4af2db6ba111d12e202db0f.js",
     "service-worker.js": "/make-my-day-frontend/service-worker.js",
     "static/css/main.909eaae4.chunk.css.map": "/make-my-day-frontend/static/css/main.909eaae4.chunk.css.map",
     "static/js/2.fd125da7.chunk.js.LICENSE.txt": "/make-my-day-frontend/static/js/2.fd125da7.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.07de80d5.js",
     "static/js/2.fd125da7.chunk.js",
     "static/css/main.909eaae4.chunk.css",
-    "static/js/main.24e17b58.chunk.js"
+    "static/js/main.1c6f4779.chunk.js"
   ]
 }

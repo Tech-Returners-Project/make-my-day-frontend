@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6dc45e2f3bc674a6953f1bf0982800ed",
+    "revision": "b34c71b5f2bf2b3bf884a5f349ec816c",
     "url": "/make-my-day-frontend/index.html"
   },
   {
-    "revision": "1a594b02c32eed560eac",
+    "revision": "9ffb128d7b33361c04b7",
     "url": "/make-my-day-frontend/static/css/main.909eaae4.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/make-my-day-frontend/static/js/2.fd125da7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1a594b02c32eed560eac",
-    "url": "/make-my-day-frontend/static/js/main.24e17b58.chunk.js"
+    "revision": "9ffb128d7b33361c04b7",
+    "url": "/make-my-day-frontend/static/js/main.1c6f4779.chunk.js"
   },
   {
     "revision": "185fd9a8635c6772f680",
