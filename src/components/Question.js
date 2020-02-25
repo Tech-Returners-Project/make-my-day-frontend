@@ -40,7 +40,7 @@ class Question extends React.Component {
 
                 <div className="col-6 text-left">
                   <img className="optionImage"
-                    src={'/images/' + option.image}
+                    src={'images/' + option.image}
                     alt=""
                   />
                 </div>
